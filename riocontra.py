@@ -1,7 +1,7 @@
 import string
 from syllabipy.sonoripy import SonoriPy
 
-words_not_to_riocontrarize = ['come', 'dove', 'quando', 'perché', 'perchè', 'proprio', 'davvero', 'tanto', 'troppo']
+words_not_to_riocontrarize = ['come', 'dove', 'quando', 'perché', 'perchè', 'proprio', 'davvero', 'tanto', 'troppo', 'questo', 'questa', 'quello', 'quella']
 
 def checkDoubleConsonant(s):
     if s[0] == s[-1] and s[0] not in ['a', 'e', 'i', 'o', 'u']:
@@ -26,6 +26,8 @@ def riocontra(s):
             if w.lower() in words_not_to_riocontrarize:
                 ret += w + ' '
                 continue
+            elif w.lower() == 'zio':
+                ret += 'ozi' + ' '
             input = SonoriPy(w)
             if len(input) == 1:
                 ret += input[0] + ' '
