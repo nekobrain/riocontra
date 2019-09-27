@@ -28,6 +28,10 @@ def riocontra(s):
                 continue
             elif w.lower() == 'zio':
                 ret += 'ozi' + ' '
+                continue
+            elif w.lower() == 'troia':
+                ret += 'iatro' + ' '
+                continue
             input = SonoriPy(w)
             if len(input) == 1:
                 ret += input[0] + ' '
