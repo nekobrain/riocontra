@@ -1,11 +1,11 @@
 import string
 from syllabipy.sonoripy import SonoriPy
 
-words_not_to_riocontrarize = ['come', 'dove', 'quando', 'perché', 'perchè', 'proprio', 'davvero', 'tanto', 'troppo', 'questo', 'questa', 'quello', 'quella']
+words_not_to_riocontrarize = ['come', 'dove', 'quando', 'perché', 'perchè', 'proprio', 'davvero', 'tanto', 'troppo', 'questo', 'questa', 'quello', 'quella', 'ciao']
 
 def checkDoubleConsonant(s):
     if s[0] == s[-1] and s[0] not in ['a', 'e', 'i', 'o', 'u']:
-        return s[-1] + s[:-1]
+        return (s[-1] + s[:-1])[1:]
     else:
         return s
 
@@ -14,6 +14,7 @@ def riocontrarizeLongWords(arr):
     return checkDoubleConsonant(''.join(arr[:riocontra_index]) + ''.join(arr[riocontra_index:][::-1]))
 
 def riocontra(s): 
+    s = s.lower()
     endings = ['.', '?', '!']
     ending = ''
     if s[len(s)-1] in endings:
